@@ -7,15 +7,17 @@ import requests
 
 API_KEY= "4TE236Lsgs1zy2dWS9dNxGoOK9ZKsaxl"
 
-#First milestone : Get API data. 
+
+#Second step : Get data for Paris, Nanterre, Saint-Denis
 
 def main():
 
     pass
 
 def get_api_data():
-
-    response = requests.get("https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=4TE236Lsgs1zy2dWS9dNxGoOK9ZKsaxl")
-    print(response.json())
+    #First step : Get API data.
+    response = requests.get("https://app.ticketmaster.com/discovery/v2/events.json?countryCode=FR&apikey=4TE236Lsgs1zy2dWS9dNxGoOK9ZKsaxl")
+    info_dict=response.json()
+    print(info_dict["_embedded"]["events"][1])
 
 get_api_data()
